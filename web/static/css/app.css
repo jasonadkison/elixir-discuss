@@ -1,1 +1,13 @@
 /* This file is for your main application css. */
+
+.help-block {
+  color: red;
+  text-transform: capitalize;
+  position: absolute;
+  bottom: -2.25rem;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 2rem;
+}
