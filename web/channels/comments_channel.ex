@@ -8,8 +8,6 @@ defmodule Discuss.CommentsChannel do
       |> Repo.get(topic_id)
       |> Repo.preload(:comments)
 
-    IO.puts "+++++++"
-    IO.inspect topic
     {:ok, %{comments: topic.comments}, assign(socket, :topic, topic)}
   end
 
