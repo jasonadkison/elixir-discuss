@@ -21,13 +21,22 @@ const createSocket = (topicId) => {
 const list = document.querySelector('.collection');
 
 const renderComments = (comments) => {
+  console.log(comments);
   list.innerHTML = comments.map(comment => commentTemplate(comment)).join('');
 };
 
 const renderComment = (comment) => {
+  console.log(comment);
   list.innerHTML += commentTemplate(comment);
 };
 
-const commentTemplate = (comment) => `<li class="collection-item">${comment.content}</li>`;
+const commentTemplate = ({content, user}) => `
+  <li class="collection-item">
+    ${content}
+    <div class="secondary-content">
+      ${user && user.email || 'Anonymous'}
+    </div>
+  </li>
+`;
 
 window.createSocket = createSocket;
